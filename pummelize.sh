@@ -1,14 +1,15 @@
 #!/bin/sh
 
-if [ -z $1 ]; then
+dir=$1
+if [ -z $dir ]; then
   echo "Usage: $(basename $0) [directory containing only images]"
   exit 1
 fi
 
-dir=$1
 
-fps=7.5 # 8 fps makes ffmpeg do weird things
-bitrate="1500k"
+# Options
+fps=7 # 8 fps is also nice
+bitrate="1500k" # FIXME unused with new mencoder settings
 
 tmpdir="/tmp/movieimgs"
 output="output.mp4"
@@ -38,11 +39,10 @@ done
 ### mencoder
 # mencoder mf://*.jpg -mf w=1280:h=720:fps=8:type=jpg -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell -oac copy -o output.avi
 # *** QUALITY WINNER ***
-mencoder -mc 0 -noskip -skiplimit 0 -ovc lavc -lavcopts vcodec=mpeg4:vhq:trell:mbd=2:vmax_b_frames=1:v4mv:vb_strategy=0:vlelim=0:vcelim=0:cmp=6:subcmp=6:precmp=6:predia=3:dia=3:vme=4:vqscale=1 "mf://$tmpdir/*.jpg" -mf type=jpg:fps=$fps -o output.avi
+mencoder -mc 0 -noskip -skiplimit 0 -ovc lavc -lavcopts vcodec=mpeg4:vhq:trell:mbd=2:vmax_b_frames=1:v4mv:vb_strategy=0:vlelim=0:vcelim=0:cmp=6:subcmp=6:precmp=6:predia=3:dia=3:vme=4:vqscale=1 "mf://$tmpdir/*.jpg" -mf type=jpg:fps=$fps -o $output
 
 
 # Open the file
-# TODO only launch if `open` exists
-open $output
+which -s open && open $output
 
 exit 0
