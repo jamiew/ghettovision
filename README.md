@@ -17,13 +17,13 @@ Dependencies
 
 On a Mac, install [Homebrew](http://mxcl.github.com/homebrew/) and run:
 
-  brew install imagemagick mplayer
+    brew install imagemagick mplayer
 
 Usage
 -----
 
-  cd ghettovision
-  ./pummelize.sh ~/Desktop/madjpgs
+    cd ghettovision
+    ./pummelize.sh ~/Desktop/madjpgs
 
 
 License
