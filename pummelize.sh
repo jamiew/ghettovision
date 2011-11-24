@@ -1,23 +1,4 @@
 #!/bin/sh
-#
-# GHETTO PUMMELVISION
-# <http://github.com/jamiew/ghetto-pummelvision>
-#
-# This script will assemble a directory of images into a video of
-# fast-moving images, like pummelvision.com by @jakelodwick
-#
-# dependencies:
-# - imagemagick (`convert`)
-# - mplayer (`mencoder`)
-#
-# On a Mac, install Homebrew and run:
-#
-#   brew install imagemagick mplayer
-#
-# Script usage:
-#
-#   ./pummelize.sh ~/Desktop/madjpgs
-#
 
 if [ -z $1 ]; then
   echo "Usage: $(basename $0) [directory containing only images]"
