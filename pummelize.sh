@@ -8,7 +8,8 @@ fi
 
 
 # Options
-fps=8
+# 7 is too slow; 8 is slightly too fast
+fps=7.5
 
 tmpdir="/tmp/movieimgs"
 output="output.avi"
