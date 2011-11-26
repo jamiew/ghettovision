@@ -21,7 +21,7 @@ mkdir -p $tmpdir
 # Output them into a perfectly numbered, ffmpeg-friendly sequenced
 x=1; for i in $dir/*; do
   counter=$(printf %06d $x)
-  echo -n "$counter ..."
+  echo "$counter ..."
   # ln "$i" "$tmpdir"/img"$counter".jpg
   convert -gravity center -resize '1280x720' -extent '1280x720>' -background black $i "$tmpdir"/img"$counter".jpg
   x=$(($x+1))
