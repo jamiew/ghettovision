@@ -1,2 +1,6 @@
 .DS_Store
 output*
+slides/
+__pycache__/
+*.pyc
+.claude/settings.local.json
