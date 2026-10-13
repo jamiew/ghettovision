@@ -2,12 +2,14 @@ Ghettovision
 ===================
 
 Assemble a directory of images into a video of fast-moving images, like
-[Pummelvision](http://pummelvision.com) by [@jakelodwick](https://github.com/jakelodwick)
+[Pummelvision](https://techcrunch.com/2010/12/23/pummelvision/) by [@jakelodwick](https://github.com/jakelodwick)
 
-1. read a directory of input images
+1. read a directory of input images, turning phone photos the right way up
 2. generate letterboxed 1280x720 JPEG intermediates (or cropped to fill, at any size)
 3. encode intermediates into sexy H.264 video
 4. add your own music and enjoy!
+
+Example: [our dog Ollie growing up, set to Spoon](https://jamiedubs.com/ghettovision/)
 
 Dependencies
 ------------
