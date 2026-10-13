@@ -5,7 +5,7 @@ Assemble a directory of images into a video of fast-moving images, like
 [Pummelvision](http://pummelvision.com) by [@jakelodwick](https://github.com/jakelodwick)
 
 1. read a directory of input images
-2. generate letterboxed 1280x720 JPEG intermediates
+2. generate letterboxed 1280x720 JPEG intermediates (or cropped to fill, at any size)
 3. encode intermediates into sexy H.264 video
 4. add your own music and enjoy!
 
@@ -24,6 +24,12 @@ Usage
 
     cd ghettovision
     ./pummelize.sh ~/Desktop/madjpgs
+
+Options:
+
+    ./pummelize.sh -s 1024x768 ~/Desktop/madjpgs  # 4:3 frames, like most phone photos
+    ./pummelize.sh -c ~/Desktop/madjpgs            # crop to fill the frame, no black bars
+    ./pummelize.sh -r 25/3 ~/Desktop/madjpgs       # 25/3 fps is 5 frames per beat at 100 BPM
 
 Extracting from Google Slides
 -----------------------------
